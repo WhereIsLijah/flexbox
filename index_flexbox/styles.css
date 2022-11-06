@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body
+{
+    font-family:'Montserrat', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    height: 100px; /*sets height of navigation bar*/
+    display: flex; /*arrange logo and navigation links horizontally*/
+    justify-content: space-around; /* adds equal amount of space to elements*/
+    align-items: center; /* aligns both logo and nav links to the center*/
+}
+
+ul{
+    list-style-type: none; /*removing the bulletin points*/
+    display: flex;  /*arranging links in flex display*/
+    align-items: center;  /*centers every navigation*/
+    padding-right: 40px;
+    
+}
+
+ul li a{
+    padding: 0 20px; /*padding between navigation links[20px - left and Right]*/
+    text-decoration: none;
+    color: rgb(51, 46, 46);
+    display: inline-block; /*setting navigation links to be inline with other items on the navigation bar*/
+}
+
+li a::after{
+    content: ''; /*we have no content to display*/
+    display: block; /*forces a new line above and below it */
+    height: 4px; /*sets height and width of hover bar under navigation link*/
+    width: 0;
+    background: #c4c4f7;
+    transition: all .5s;
+}
+
+li a:hover::after{
+    width: 100%; /*length of bar under navigation links*/
+}
+
+.hamburger_menu{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column; /*bar are displayed stacked from top to bottom */
+    justify-content: space-between; /*arranges space between the bars*/
+    width: 30px;
+    height: 21px;
+}
+
+ 
+
+.hamburger_menu .bar{
+    width: 100%; /*Giving the bar full width */
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+} /*creating the 3 bars in the Hamburger Menu*/
+
+main{
+    display: flex;
+    height:calc(100vh - 100px); /*calculating the viewpoint of the body*/
+    align-items: center; /*used for vertical aligning*/
+    justify-content: center; /*used for horizontal aligning*/
+}
+
+.hero_img{
+    margin-left: 40px;
+    max-width: 500px;
+    height: auto;
+}
+
+.left_content{
+    width: 40%;
+}
+
+main h1{
+    font-size: 70px;
+    color: #133b4f;
+    transform: uppercase;
+}
+
+main h2{
+    font-size: 35px;
+    color: #FCA70C;
+    font-weight: 400;
+    transform: uppercase;
+    letter-spacing: 8px;
+}
+
+main p{
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    line-height: 32px; /*gives space between lines*/
+    margin: 30px 0; /*gives space between h2 and p*/
+}
+
+.cta{
+    padding: 15px 30px;
+    background: #C4C4F7;
+    color: white;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #C4C4F7;
+    color: black; 
+    border: none;
+    box-shadow: 2px 5px #888888;   
+}
+
+.signup-btn{
+    margin: 20px;
+    padding: 8px 16px 6px 16px;
+    background: #b9b9f7;
+    color: white;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 50px;
+    font-weight: 700; 
+}
+
+.signup-btn:hover{
+    background: #6c6cc7;
+    color: black;
+}
+
+.signup-btn:hover::after{
+    width: 0; /*removing the hover bar beneath sign up button*/
+}
+
+.logo{
+    cursor: pointer;
+    padding-left: 7%; /*increase space between logo and navigation link */
+}
+
+@media all and (max-width:500px){
+    header{
+
+display: none;
+    }
+
+    .left_content{
+        display: none;
+    }
+
+    .right_content{
+        display: none; 
+    }
+}
